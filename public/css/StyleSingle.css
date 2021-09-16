@@ -1,0 +1,551 @@
+/* PROPERTY */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* HOME X RESULT X PARTIALS */
+.nav-link {
+  cursor: pointer;
+  font-family: "Poppins",sans-serif;
+  font-weight: 400;
+}
+.navbar-brand {
+  cursor: pointer;
+}
+.myClassNavbarTop {
+  box-shadow: 0 0 0 3px #004759;
+}
+.nav-link i {
+  font-size: 20px;
+  display: block;
+}
+.navbar-brand h3 {
+  font-family: "Poppins",sans-serif;
+  font-weight: 800;
+}
+.navbar-brand h3.nonActive {
+  display: none;
+  animation-name: nonActive;
+  animation-duration: 2s;
+}
+.navbar .container .Mybtn {
+  margin-left: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navbar .container .btn-menu {
+  margin-left: 10px;
+  background: none;
+  border: none;
+}
+.navbar .container .btn-search {
+  margin-right: 20px;
+  background: none;
+  border: none;
+}
+.navbar .container .Mybtn i {
+  font-weight: bold;
+  font-size: 23px;
+  margin-right: -20px;
+}
+.navbar .navbar-brand .img {
+  margin-right: -40px;
+}
+.navbar .inputDiv.active {
+  display: block;
+  animation-name: active;
+  animation-duration: 2s;
+}
+.navbar .inputDiv {
+  display: none;
+}
+.navbar .inputDiv input {
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  background: none;
+  width: 210px;
+  margin-right: 5px;
+}
+.navbar .inputDiv input:focus {
+  border-bottom: 2px solid blue;
+}
+.navbar .inputDiv .delete {
+  margin-top: 5px;
+  margin-right: 13px;
+}
+.navbar .inputDiv .delete i {
+  font-size: 20px;
+  font-weight: bold;
+}
+.bodyVideo {
+  margin-top: 8rem;
+  margin-bottom: 7rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.cardVideoHome {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 1rem;
+  width: 18rem;
+}
+.myAbout {
+  color: #000;
+}
+a {
+  cursor: pointer;
+}
+.btn-about {
+  margin-right: 12px;
+}
+.btnlogin {
+  margin-right: 12px;
+  color: #000;
+}
+.content {
+  margin-top: 120px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 120px;
+}
+
+/* SINGLE VIDEO */
+.videoBodySingle {
+  display: block;
+}
+.bodyVideoSingle {
+  background: black;
+  z-index: 999;
+  margin-top: 5rem;
+  position: fixed;
+  opacity: 1;
+}
+.mainVideoSingle {
+  z-index: 1;
+  display: block;
+}
+.videoYt {
+  position: absolute;
+  right: 0.1rem;
+  left: 0.5px;
+  margin-top: 1.5rem;
+  width: 975px;
+  height: 500px;
+}
+.titleVideoSingle {
+  padding-top: 12rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.titleVideoSingle .title {
+  border-top: 2px solid #000;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.titleVideoSingle .detail {
+  display: none;
+}
+.titleVideoSingle .detail.active {
+  display: block;
+  animation-name: active;
+  animation-duration: 1s;
+}
+.titleVideoSingle .detail .detailPublish {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+.titleVideoSingle .detail .description {
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+.detail .detailPublish detailPublic {
+  padding: 10px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+}
+.profileYtVideo {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+}
+.profileYtVideo .profile {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+.profileYtVideo .profile .name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  padding-left: 0.5rem;
+}
+.profileYtVideo .subscribe {
+  position: absolute;
+  padding-top: 1.5rem;
+  right: 50px;
+  font-size: 20px;
+  color: red;
+}
+.videoLain {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.videoLain .cardVideoHome {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 18.4rem;
+}
+.mainVideoSingle.nonActive {
+  animation-name: nonActive;
+  animation-duration: 1.5s;
+  display: none;
+}
+.mainVideoSingle .showComments {
+  border-bottom: 1px solid #000;
+  margin-top: 1rem;
+  padding: 3px;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+.comments-list {
+  display: none;
+  animation-name: nonActive;
+  animation-duration: 1.5s;
+}
+.comments-list.active {
+  display: block;
+  animation-name: active;
+  animation-duration: 1.5s;
+  padding-top: 13rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+.comments-list .close {
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.comments-list .close button {
+  font-size: 20px;
+  border: none;
+  background: none;
+  font-weight: 600;
+}
+.comments-list .main-comments {
+  margin-top: 10px;
+  border-bottom: 2px solid #000;
+}
+.comments-list .author-comments {
+  display: flex;
+}
+.author-comments .img-comment-author {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.main-comments .comments-value p {
+  font-weight: 400;
+}
+.main-comments .like {
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.loading {
+  padding-top: 20rem;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-right: 16px solid orange;
+  border-bottom: 16px solid green;
+  border-left: 16px solid pink;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.text-loading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* ABOUT */
+.image {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.detail {
+  padding: 3px;
+  text-align: center;
+  border: 2px solid #000;
+  background-color: #d0eaed;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  box-shadow:20px 20px 20px 20px grey;
+}
+.detail h2 {
+  font-weight: 700;
+}
+.socialMedia .iconSocialMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.iconSocialMedia a {
+  margin-top: 5px;
+  text-decoration: none;
+  color: #000;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 600px) {
+  .bodyVideo {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+  .cardVideoHome {
+    display: flex;
+    margin-top: 1rem;
+    width: 31rem;
+  }
+  .videoBodySingle {
+    display: block;
+  }
+  .bodyVideoSingle {
+    margin-top: 5rem;
+    position: fixed;
+  }
+  .mainVideoSingle {
+    display: block;
+  }
+  .videoYt {
+    position: absolute;
+    right: 0.1rem;
+    left: 0.5px;
+    margin-top: 1.5rem;
+    width: 550px;
+    height: 400px;
+  }
+  .titleVideoSingle {
+    padding-top: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .titleVideoSingle .title {
+    border-top: 2px solid #000;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .titleVideoSingle .detail {
+    display: none;
+  }
+  .titleVideoSingle .detail.active {
+    display: block;
+    animation-name: active;
+    animation-duration: 1s;
+  }
+  .titleVideoSingle .detail .detailPublish {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+  }
+  .titleVideoSingle .detail .description {
+    margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+  .detail .detailPublish detailPublic {
+    padding: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+  }
+  .profileYtVideo {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+  }
+  .profileYtVideo .profile {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .profileYtVideo .profile .name {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding-left: 0.5rem;
+  }
+  .profileYtVideo .subscribe {
+    position: absolute;
+    padding-top: 1.5rem;
+    right: 50px;
+    font-size: 20px;
+    color: red;
+  }
+  .videoLain {
+    margin: 0 auto;
+    padding-left: 0;
+  }
+  .videoLain .cardVideoHome {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 33rem;
+  }
+  .mainVideoSingle.nonActive {
+    animation-name: nonActive;
+    animation-duration: 1.5s;
+    display: none;
+  }
+  .mainVideoSingle .showComments {
+    border-bottom: 1px solid #000;
+    margin-top: 1rem;
+    padding: 3px;
+    text-align: center;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+  }
+  .comments-list {
+    display: none;
+    animation-name: nonActive;
+    animation-duration: 1.5s;
+  }
+  .comments-list.active {
+    display: block;
+    animation-name: active;
+    animation-duration: 1.5s;
+    padding-top: 7rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+  .comments-list .close {
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .comments-list .close button {
+    font-size: 20px;
+    border: none;
+    background: none;
+    font-weight: 600;
+  }
+  .comments-list .main-comments {
+    margin-top: 10px;
+    border-bottom: 2px solid #000;
+  }
+  .comments-list .author-comments {
+    display: flex;
+  }
+  .author-comments .img-comment-author {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .main-comments .like {
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+  
+  /* ABOUT */
+  .image {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+  .detail {
+    padding: 3px;
+    text-align: center;
+    border: 2px solid #000;
+    background-color: #d0eaed;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    box-shadow:20px 20px 20px 20px grey;
+  }
+  .detail h2 {
+    font-weight: 700;
+  }
+  .socialMedia .iconSocialMedia {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .iconSocialMedia a {
+    margin-top: 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+}
+
+/* ANIMATION */
+@keyframes active {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes nonActive {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

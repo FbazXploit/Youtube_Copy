@@ -1,0 +1,32 @@
+{% extends "layouts/main_layout.html" %}
+{% load static %}
+
+{% block contents %}
+
+  <div class="row justify-content-center">
+    <img class="rounded-circle aboutImg" src="{% static 'img/Dev.jpg' %}" />
+    
+    <div class="card cardBio">
+      <div class="card-body">
+        <b>Nama</b> : <b>Fbaz</b>.
+      </div>
+    </div>
+    <div class="card cardBio">
+      <div class="card-body">
+        <b>Umur</b> : <b>14</b> Tahun.
+      </div>
+    </div>
+    <div class="card cardBio">
+      <div class="card-body text-center">
+        <b>My Social Media</b><br/>
+        <div class="icon">
+          <a href="https://youtube.com/channel/UC8VHw_PvuSGmHKYx_sG-A_w" class="text-dark"><i class="bi bi-youtube"></i></a>
+          <a href="https://github.com/FbazXploit/" class="text-dark"><i class="bi bi-github"></i></a>
+          <a href="https://www.instagram.com/story.fbaz/" class="text-dark"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+{% endblock contents %}

@@ -1,0 +1,209 @@
+/* PROPERTY */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* HOME X RESULT X PARTIALS */
+.nav-link {
+  cursor: pointer;
+  font-family: "Poppins",sans-serif;
+  font-weight: 400;
+}
+.navbar-brand {
+  cursor: pointer;
+}
+.myClassNavbarTop {
+  box-shadow: 0 0 0 3px #004759;
+}
+.nav-link i {
+  font-size: 20px;
+  display: block;
+}
+.navbar-brand h3 {
+  font-family: "Poppins",sans-serif;
+  font-weight: 800;
+}
+.navbar-brand h3.nonActive {
+  display: none;
+  animation-name: nonActive;
+  animation-duration: 2s;
+}
+.navbar .container .Mybtn {
+  margin-left: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navbar .container .btn-menu {
+  margin-left: 10px;
+  background: none;
+  border: none;
+}
+.navbar .container .btn-search {
+  margin-right: 20px;
+  background: none;
+  border: none;
+}
+.navbar .container .Mybtn i {
+  font-weight: bold;
+  font-size: 23px;
+  margin-right: -20px;
+}
+.navbar .navbar-brand .img {
+  margin-right: -40px;
+}
+.navbar .inputDiv.active {
+  display: block;
+  animation-name: active;
+  animation-duration: 2s;
+}
+.navbar .inputDiv {
+  display: none;
+}
+.navbar .inputDiv input {
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  background: none;
+  width: 210px;
+  margin-right: 5px;
+}
+.navbar .inputDiv input:focus {
+  border-bottom: 2px solid blue;
+}
+.navbar .inputDiv .delete {
+  margin-top: 5px;
+  margin-right: 13px;
+}
+.navbar .inputDiv .delete i {
+  font-size: 20px;
+  font-weight: bold;
+}
+.myAbout {
+  color: #000;
+}
+a {
+  cursor: pointer;
+}
+.btn-about {
+  margin-right: 12px;
+}
+.btnlogin {
+  margin-right: 12px;
+  color: #000;
+}
+.content {
+  margin-top: 120px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 120px;
+  font-family: "Poppins" sans-serif;
+}
+.refresh-text {
+  font-weight: 600;
+}
+
+/* ABOUT */
+.aboutImg {
+  width: 15rem;
+  margin-bottom: 15px;
+}
+.cardBio {
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+.cardBio .card-body {
+  font-family: "Poppins", Sans-Serif;
+  font-weight: 500;
+}
+.cardBio .card-body .icon {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+/* CHANEL */
+.show-chanel {
+  margin-top: 100px;
+  margin-bottom: 120px;
+  font-family: "Poppins" sans-serif;
+}
+.banner {
+  width: 100%;
+}
+.chanel-title {
+  font-family: "Poppins", Sans-Serif;
+  font-size: 25px;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+.chanel-subs {
+  font-family: "Poppins", Sans-Serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 11rem;
+}
+.img-chanel {
+  margin-top: 12px;
+  margin-left: 2rem;
+  margin-right: 10px;
+  width: 8rem;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+.video {
+  width: 95%;
+  margin: 0 auto 0;
+}
+.navbarChanel {
+  background: none;
+  border-bottom: 1px solid #00757d;
+  font-family: "Poppins", Sans-Serif;
+  font-weight: 400;
+}
+.navbarChanel .container .navbar-text {
+  cursor: pointer;
+}
+.navbarChanel .container .active-ch {
+  font-weight: 600;
+  color: red;
+}
+.cardDetailChanel {
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-image: linear-gradient(to right top, #d16ba5, #f86c8c, #ff7c67, #ff993d, #f2bd00, #d2d216, #ace43f, #7bf46a, #5bf896, #43fbbb, #43fcda, #5ffbf1);
+}
+
+/* Tools */
+.tool {
+  font-family: "Poppins", Sans-Serif;
+  font-weight: 600;
+}
+.tool h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.tool .link {
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+.tool .link .card {
+  box-shadow: 5px 0 0 0;
+  background-color: #232323;
+}
+.tool .link .card:hover {
+  background-color: #00ccff;
+}
+.tool .link .card .card-body span {
+  font-weight: 500;
+  padding-left: 8px;
+}
+
+/* List Play */
+.headerPlay .cardInfo {
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #7ea8f1, #57b7fc, #00c4ff, #00d7f5, #00e6c8, #00ed7f, #a8eb12);
+}

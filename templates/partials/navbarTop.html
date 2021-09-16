@@ -1,0 +1,22 @@
+  {% load static %}
+  <nav class="navbar navbar-light bg-light fixed-top myClassNavbarTop">
+    <div class="container">
+      <a class="navbar-brand d-flex" href="/">
+        <img src="{% static 'img/YT.png' %}" width="80" title="Yt Image" alt="Yt Image">
+        <h3 class="mt-4 titleYt">Youtube Copy</h3>
+      </a>
+      <div class="inputDiv">
+        <button class="Mybtn delete"><i class="bi bi-backspace-reverse-fill"></i></button>
+        <input type="text" name="search" class="input-search" autocomplete="off" autofocus placeholder="Please Enter To Search">
+      </div>
+      <button type="submit" class="Mybtn btn-search"><i class="bi bi-search"></i></button>
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'img/user.jpg' %}" width="60" class="rounded-circle img" title="Profile" alt="Profile">
+      </a>
+      <button type="submit" class="Mybtn btn-menu btn-about">
+        <a href="/login" class="mt-2 btnlogin">
+          <i class="bi bi-box-arrow-in-right"></i>
+        </a>
+      </button>
+    </div>
+  </nav>

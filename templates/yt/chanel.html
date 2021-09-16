@@ -1,0 +1,124 @@
+{% extends "layouts/main_layout.html" %}
+{% load static %}
+
+{% block chanel %}
+
+  {% for ch in chanel.items %}
+  <img class="banner" src="{{ ch.brandingSettings.image.bannerExternalUrl }}"/>
+  
+    <img class="img-chanel" src="{{ ch.snippet.thumbnails.high.url }}" alt="" />
+    <span>
+      <span class="chanel-title">{{ ch.snippet.title }}</span>
+      <br>
+      <span class="chanel-subs">{{ ch.statistics.subscriberCount }} Subscriber</span>
+    </span>
+    
+    <hr/>
+    
+    <nav class="navbar navbarChanel">
+      <div class="container">
+        <a class="navbar-text text-decoration-none text-dark {% if main == 'berandaTemplate' %} active-ch {% endif %}" href="{% url 'yt:chanel' ch.id %}">
+          Beranda
+        </a>
+        <a class="navbar-text text-decoration-none text-dark {% if main == 'videoTemplate' %} active-ch {% endif %}" href="{% url 'yt:chanelVideo' ch.id %}">
+          Video
+        </a>
+        <a class="navbar-text text-decoration-none text-dark {% if main == 'playTemplate' %} active-ch {% endif %}" href="{% url 'yt:chanelPlay' ch.id %}">
+          Playlist
+        </a>
+        <a class="navbar-text text-decoration-none text-dark {% if main == 'detailTemplate' %} active-ch {% endif %}" href="{% url 'yt:chanelDetail' ch.id %}">
+          Detail
+        </a>
+      </div>
+    </nav>
+  {% endfor %}
+    
+    {% if main == 'berandaTemplate' %}
+    <div class="video row">
+      {% for video in videoBeranda %}
+        <div class="col-md-4">
+          <a href="/singleVideo/{{ video.snippet.channelId }}/{{ video.id.videoId }}/" class="text-decoration-none text-dark">
+            <div class="card mt-3">
+              <img src="{{ video.snippet.thumbnails.high.url }}" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">{{ video.snippet.title |truncatechars:75 }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    {% elif main == 'videoTemplate' %}
+    <div class="video row">
+      {% for video in video %}
+        <div class="col-md-4">
+          <a href="/singleVideo/{{ video.snippet.channelId }}/{{ video.id.videoId }}/" class="text-decoration-none text-dark">
+            <div class="card mt-3">
+              <img src="{{ video.snippet.thumbnails.high.url }}" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">{{ video.snippet.title |truncatechars:75 }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    
+    {% elif main == 'playTemplate' %}
+    <div class="video row">
+      {% for play in playlist.items %}
+        <div class="col-md-4">
+          <a href="/getListPlay/{{ play.id }}/{{ play.snippet.channelId }}/" class="text-decoration-none text-dark">
+            <div class="card mt-3">
+              <img src="{{ play.snippet.thumbnails.high.url }}" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-text">{{ play.snippet.title }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    
+    {% elif main == 'detailTemplate' %}
+    <div class="video row">
+      {% for ch in chanel.items %}
+        <div class="card cardDetailChanel">
+          <div class="card-body">
+            <b>Name Chanel</b> : <b>{{ ch.snippet.title }}</b>.
+          </div>
+        </div>
+        <div class="card cardDetailChanel">
+          <div class="card-body">
+            <b>Subscriber Chanel</b> : <b>{{ ch.statistics.subscriberCount }} Subscriber</b>.
+          </div>
+        </div>
+        <div class="card cardDetailChanel">
+          <div class="card-body">
+            <b>Published At</b> : <b>{{ pub2.0 }} {{ month }} {{ pub.0 }}</b>.
+          </div>
+        </div>
+        <div class="card cardDetailChanel">
+          <div class="card-body">
+            <b>Link Chanel</b> : <b>
+              <a class="text-decoration-none" href="https://youtube.com/channel/{{ ch.id }}">https://youtube.com/channel/{{ ch.id }}</a></b>
+          </div>
+        </div>
+        <div class="card cardDetailChanel">
+          <div class="card-body">
+            <b>Description</b>
+            <p>{{ ch.snippet.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    
+    {% else %}
+    <div class="video row">
+      <h3>Not Found</h3>
+    </div>
+    
+    {% endif %}
+
+
+{% endblock chanel %}

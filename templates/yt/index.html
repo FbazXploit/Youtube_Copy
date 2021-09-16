@@ -1,0 +1,22 @@
+{% extends "layouts/main_layout.html" %}
+{% load static %}
+
+{% block contents %}
+
+  <div class="row">
+    {% for video in list_video %}
+      <div class="col-md-4">
+        <a href="/singleVideo/{{ video.snippet.channelId }}/{{video.id.videoId }}/" class="text-decoration-none text-dark">
+          <div class="card mt-3">
+            <img src="{{ video.snippet.thumbnails.high.url }}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p class="card-text">{{ video.snippet.title |truncatechars:75 }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+    <a href="/" class="text-decoration-none text-center mt-3 refresh-text text-dark">Please Refresh Page</a>
+  </div>
+
+{% endblock contents %}

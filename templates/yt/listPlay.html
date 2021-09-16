@@ -1,0 +1,56 @@
+{% extends "layouts/main_layout.html" %}
+{% load static %}
+
+{% block contents %}
+
+  <div class="row">
+    <div class="headerPlay">
+      {% for play in playlist.items %}
+        {% if play.id == idPlay %}
+          <div class="card cardInfo">
+            <div class="card-body">
+              <b>Title : </b>
+              <b>{{ play.snippet.title }}</b>
+            </div>
+          </div>
+          <div class="card cardInfo">
+            <div class="card-body">
+              <b>Chanel Name : </b>
+              <b>{{ play.snippet.channelTitle }}</b>
+            </div>
+          </div>
+          <div class="card cardInfo">
+            <div class="card-body">
+              <b>Publish : </b>
+              <b>{{ pub2.0 }} {{ monthVar }} {{ pub.0 }}</b>
+            </div>
+          </div>
+          <div class="card cardInfo">
+            <div class="card-body">
+              <b>Description</b>
+              {% if play.snippet.description != "" %}
+              <p>{{ play.snippet.description }}</p>
+              {% else %}
+              <p>Not Found Description In Playlist</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %} 
+    </div>
+    
+    {% for video in videoPlay.items %}
+      <div class="col-md-4">
+        <a href="/singleVideo/{{ video.snippet.channelId }}/{{video.id.videoId }}/" class="text-decoration-none text-dark">
+          <div class="card mt-3">
+            <img src="{{ video.snippet.thumbnails.high.url }}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p class="card-text">{{ video.snippet.title |truncatechars:75 }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock contents %}

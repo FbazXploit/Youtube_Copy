@@ -1,0 +1,139 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="{% static 'css/StyleSingle.css' %}" rel="stylesheet">
+
+  <title>Youtube Copy | {{ title }}</title>
+</head>
+<body class="videoBodySingle">
+  
+  {% include "partials/navbarTop.html" %}
+  
+
+  <div class="bodyVideoSingle">
+    <iframe class="videoYt" src="https://www.youtube.com/embed/{{ id }}"></iframe>
+  </div>
+  
+  <div class="loading">
+    <div class="loader"></div>
+    <p class="text-loading">Mengambil Data Dari APIS Youtube</p>
+  </div>
+  
+  <div class="comments-list">
+    <div class="close">
+      <button class="close-button"><i class="bi bi-x-lg"></i> Close Comments</button>
+    </div>
+    {% for command in command.items %}
+      <div class="main-comments">
+        <div class="author-comments">
+          <div class="img-comment-author">
+            <a href="{% url 'yt:chanel' command.snippet.topLevelComment.snippet.authorChannelId.value %}"><img src="{{ command.snippet.topLevelComment.snippet.authorProfileImageUrl }}" width="50" class="rounded-circle"></a>
+          </div>
+          <div class="comments-value">
+            <b class="pb-2">{{ command.snippet.topLevelComment.snippet.authorDisplayName }}</b>
+            <p class="pt-2">{{ command.snippet.topLevelComment.snippet.textOriginal }}</p>
+          </div>
+        </div>
+        <div class="like">
+          <i class="bi bi-hand-thumbs-up"></i> {{ command.snippet.topLevelComment.snippet.likeCount }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <div class="mainVideoSingle">
+    <div class="titleVideoSingle">
+    {% for video in video.items %}
+      <p class="title">
+          {{ video.snippet.title }}
+      </p>
+      <div class="detail">
+        <div class="detailPublish">
+          <detailPublic>
+            <h3>{{ video.statistics.likeCount }}</h3>
+            <small>Like</small>
+          </detailPublic>
+          <detailPublic>
+            <h3>{{ video.statistics.viewCount }}</h3>
+            <small>Views</small>
+          </detailPublic>
+          <detailPublic>
+            <h3>{{ pub2.0 }}</h3>
+            <small>{{ month }} | {{ pub.0 }}</small>
+          </detailPublic>
+        </div>
+        <div class="description">
+          <p>{{ video.snippet.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+      <nav class="navbar navbar-expand navbar-light text-dark">
+        <ul class="navbar-nav nav-justified w-100">
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="bi bi-hand-thumbs-up"></i> Like</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="bi bi-hand-thumbs-down"></i> DisLike</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="bi bi-share-fill"></i>Share</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="bi bi-download"></i>Download</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="profileYtVideo">
+        {% for ch in channel.items %}
+          <a href="{% url 'yt:chanel' ch.id %}" class="text-dark text-decoration-none">
+          <div class="profile">
+            <img src="{{ ch.snippet.thumbnails.high.url }}" class="rounded-circle img" width="60">
+            <div class="name">
+              <h4>{{ ch.snippet.title }}</h4>
+              <small>{{ ch.statistics.subscriberCount }} Subscriber</small>
+            </div>
+          </div>
+        </a>
+          <div class="subscribe">
+            <i class="bi bi-youtube youtube"></i> SUBSCRIBE
+          {% endfor %}
+        </div>
+      </div>
+      
+      <div class="showComments">
+        <p>Click Here... Show Comments In Video Youtube</p>
+      </div>
+    </div>
+    
+    <div class="row videoLain">
+      <div class="col">
+        {% for vlist in video_list %}
+          <a href="/singleVideo/{{ vlist.snippet.channelId }}/{{ vlist.id.videoId }}/" class="text-decoration-none text-dark">
+            <div class="card cardVideoHome">
+              <img src="{{ vlist.snippet.thumbnails.high.url }}" class="card-img-top" alt="...">
+              <div class="card-body">
+              <p class="card-text">{{ vlist.snippet.title |truncatechars:75 }}</p>
+              </div>
+            </div>
+          </a>
+          
+        {% endfor %}
+      </div>
+    </div>
+ </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+  <script src="{% static 'js/myScript.js' %}"></script>
+
+</body>
+</html>

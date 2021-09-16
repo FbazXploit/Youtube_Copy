@@ -1,0 +1,22 @@
+{% extends "layouts/main_layout.html" %}
+{% load static %}
+
+{% block contents %}
+
+  <div class="row">
+    <h5>Result Search : {{ keywordSearch }}</h5>
+    {% for video in resultSearch %}
+      <a href="/singleVideo/{{ video.snippet.channelId }}/{{video.id.videoId }}/" class="text-decoration-none text-dark">
+        <div class="col-md-4">
+          <div class="card mt-3">
+            <img src="{{ video.snippet.thumbnails.high.url }}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p class="card-text">{{ video.snippet.title |truncatechars:75 }}</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+{% endblock contents %}
